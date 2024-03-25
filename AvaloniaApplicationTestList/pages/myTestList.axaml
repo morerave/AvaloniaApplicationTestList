@@ -1,0 +1,49 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+			 xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+			 xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+			 DataContext="{Binding RelativeSource={RelativeSource Self}}"
+			 xmlns:system="clr-namespace:System;assembly=System.Runtime"
+             x:Class="AvaloniaApplicationTestList.pages.myTestList">
+
+	<StackPanel>
+
+		<StackPanel.ContextMenu>
+			<ContextMenu>
+				<MenuItem Name="DisplayLogCopy" Header="Copy" >
+				</MenuItem>
+				<MenuItem Name="DisplayLogClean" Header="Clean" Click="ResetLogs">
+				</MenuItem>
+				<MenuItem Name="PopulateList" Header="Populate" Click="Populate">
+				</MenuItem>
+				<MenuItem Name="PopulateFullList" Header="PopulateFull" Click="PopulateFull">
+				</MenuItem>
+			</ContextMenu>
+		</StackPanel.ContextMenu>
+		
+		<Border Name="BorderListBox" BorderBrush="Black" BorderThickness="1" Padding="10">
+			<ListBox
+				Name="TraceListBox"
+				ItemsSource="{Binding ItemsTraceList}">
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<Grid Margin="0,-30,0,-30">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto" />
+							</Grid.ColumnDefinitions>
+							<TextBlock Grid.Column="0" 
+									   Text="{Binding OutPut}" VerticalAlignment="Center" Foreground="{Binding ForeColor}"/>
+						</Grid>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+		</Border>
+
+	</StackPanel>
+
+
+</UserControl>
