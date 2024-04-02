@@ -14,10 +14,10 @@ public partial class MainWindow : Window
 
     private void OnLayoutUpdated(object? sender, System.EventArgs e)
     {
-        //this.Main.testList.BorderListBox.Height = this.Height - 150;
-        this.Main.testList.TraceListBox.Height = this.Height - 150;
+        // this.Main.testList.BorderListBox.Height = this.Height - 150;
+        this.Main.testList.TraceListBox.Height = this.Height - 180;
         this.Main.testList.TraceListBox.Width = this.Width;
-        //this.Main.TabControlMain.Height = this.Height - 50;
+        // this.Main.TabControlMain.Height = this.Height - 50;
     }
 
 
